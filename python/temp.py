@@ -1,0 +1,11 @@
+hour_angle=30
+min_angle=6
+hour_per_min=0.5
+hr=int(input())
+if(hr==12):
+  hr=0
+mi=int(input())
+H_angle=hr*hour_angle
+M_angle=mi*min_angle
+H_angle+=(mi*hour_per_min)
+print(abs(H_angle-M_angle))

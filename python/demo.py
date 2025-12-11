@@ -1,0 +1,34 @@
+a=input()
+b=int(input())
+ele=ord(a)+b
+if(ele>90):
+  ele=ele-90
+  ele%=26
+  if(ele==0):
+    print(a)
+  else:
+    print(chr(ele+64))
+else:
+  print(chr(ele))
+a=list(map(int,input().split()))
+if(a==sorted(a)):
+  print(0);
+elif(a[::-1]==sorted(a)):
+  print(len(a)//2)
+else:
+  n=len(a)
+  l=[False]*n
+  cycle=0
+  for i in range(n):
+    inicycle=0
+    if(l[i]==False and a[i]!=i+1):
+      j=a[i]-1
+      while(l[j]==False):
+        l[j]=True
+        inicycle+=1
+        j=a[j]-1
+      cycle+=inicycle-1
+    else:
+      l[i]=True
+      continue
+  print(cycle)
